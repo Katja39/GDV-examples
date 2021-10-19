@@ -1,2 +1,2 @@
 # GDV-examples
-Übungen zum Modul Grundlagen Datenverarbeitung 1,2
+Übungen zum Modul Grundlagen Datenverarbeitung 1,2 (C++)
