@@ -1,4 +1,5 @@
 #include "vector4.h"
+#include "matrix4x4.h"
 #include <math.h>            
 #include <stdio.h> 
 
@@ -151,10 +152,20 @@ CVector CVector::GetNormalized4() const
 	return (*this) * (1.0f / Length);
 }
 
+CVector CVector::operator * (const CMatrix& _Other) const
+{
+	return CVector(
+		GetDotProduct4(_Other.GetColumn(0)),
+		GetDotProduct4(_Other.GetColumn(1)),
+		GetDotProduct4(_Other.GetColumn(2)),
+		GetDotProduct4(_Other.GetColumn(3)));
+}
+
 void CVector::Debug() const
 {
 	printf("%+10.2f\n", Values[0]);
 	printf("%+10.2f\n", Values[1]);
 	printf("%+10.2f\n", Values[2]);
 	printf("%+10.2f\n", Values[3]);
+	printf("\n");
 }

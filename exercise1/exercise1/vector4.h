@@ -18,7 +18,7 @@ Y'=X*a12+Y*a22+Z*a32+W*a42
 Z'=X*a13+Y*a23+Z*a33+W*a43
 W'=X*a14+Y*a24+Z*a34+W*a44
 */
-class CMatrix4x4;
+class CMatrix;
 
 class CVector {
 
@@ -57,6 +57,8 @@ class CVector {
 		CVector GetNormalized2() const;
 		CVector GetNormalized3() const;
 		CVector GetNormalized4() const;
+
+		CVector operator * (const CMatrix& _Other) const;
 
 		void Debug() const;
 	private:
